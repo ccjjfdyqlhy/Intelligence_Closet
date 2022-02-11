@@ -18,7 +18,7 @@ try:
     verify=linecache.getline('./.setup', 1)
     first=linecache.getline('./.setup', 2)
     target=linecache.getline('./.setup',3)
-    open('./setup.txt','r')
+    open('./.setup','r')
 except FileNotFoundError:
     print('[错误]没有侦测到配置文件')
     print('[信息]新窗口已创建')
