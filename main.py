@@ -6,9 +6,23 @@ import sys
 import os
 from tkinter import ttk
 from tkinter import *
+from tkinter.messagebox import *
 print('[信息]正在读取配置文件...')
-with open('setup') as file_obj:
-    target = file_obj.read()  
+try:
+    with open('setup') as file_obj:
+        target = file_obj.read()  
+except:
+    print('[错误]没有侦测到setup文件')
+    print('[信息]新窗口已创建')
+    root=tkinter.Tk()
+    root.title('初始化应用程序')
+    root.geometry('500x500')
+    label=tkinter.Label(root,text='软件初始化应用程序v1.0 ©Darkstar Software 2021')
+    label.pack()
+    showerror(title='程序错误',message='程序初始化失败，请尝试重新运行setup.py解决！')
+    root.mainloop()
+    print('[警告]程序已退出')
+    quit()
 print('[信息]天气模块已启动，正在获取...')
 rep = requests.get('http://www.tianqiapi.com/api?version=v6&appid=99245552&appsecret=RL8NtmPx&city='+target)
 rep.encoding = 'utf-8'
@@ -18,9 +32,9 @@ temp=rep.json()['tem']+'°C'
 wspeed=rep.json()['win_speed']
 hum=rep.json()['humidity']
 airlevel=rep.json()['air_level']
-print('[信息]获取成功！')
+print('[信息]获取成功')
 root=tkinter.Tk()
-print('[信息]主窗口已创建！')
+print('[信息]主窗口已创建')
 w = root.winfo_screenwidth()
 h = root.winfo_screenheight()
 root.geometry("%dx%d" %(w,h))
@@ -48,7 +62,7 @@ def unlock():
         os.execv(__file__, sys.argv)
     root.destroy()
     main=tkinter.Tk()
-    print('[信息]新窗口已创建！')
+    print('[信息]新窗口已创建')
     main.title('智能衣物管理系统')
     main.geometry("%dx%d" %(w,h))
     main.attributes("-fullscreen", 'true')
