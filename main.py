@@ -18,7 +18,7 @@ try:
     verify=linecache.getline('./config.ICset', 1)
     first=linecache.getline('./config.ICset', 2)
     target=linecache.getline('./config.ICset',3)
-    open('./config.ICset','r')
+    open(path+'./config.ICset')
 except FileNotFoundError:
     print('[错误]没有侦测到配置文件')
     print('[信息]新窗口已创建')
