@@ -14,7 +14,7 @@ except ModuleNotFoundError:
     quit()
 print('[信息]正在读取配置文件...')
 try:
-    path=sys.path[4]
+    path=os.getcwd()
     verify=linecache.getline(path+'\config.ICset', 1)
     first=linecache.getline(path+'\config.ICset', 2)
     target=linecache.getline(path+'\config.ICset',3)
