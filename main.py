@@ -15,10 +15,10 @@ except ModuleNotFoundError:
 print('[信息]正在读取配置文件...')
 try:
     path=sys.path[4]
-    verify=linecache.getline('./config.ICset', 1)
-    first=linecache.getline('./config.ICset', 2)
-    target=linecache.getline('./config.ICset',3)
-    open(path+'./config.ICset')
+    verify=linecache.getline(path+'\config.ICset', 1)
+    first=linecache.getline(path+'\config.ICset', 2)
+    target=linecache.getline(path+'\config.ICset',3)
+    open(path+'\config.ICset')
 except FileNotFoundError:
     print('[错误]没有侦测到配置文件')
     print('[信息]新窗口已创建')
@@ -40,14 +40,14 @@ else:
 print('[信息]正在检查运行次数')
 if first == '1':
     firstrun=1
-    with open(path+'./config.ICset')as fp:
+    with open(path+'\config.ICset')as fp:
         s = fp.read()#将指定文件读入内存
         fp.close()#关闭该文件
     a = s.split('\n')
     a.insert(1, '0')#在第 LINE+1 行插入
     s = '\n'.join(a)#用'\n'连接各个元素
-    with open(path+'./config.ICset', 'w')as fob:
-        fp.write(s)
+    with open(path+'\config.ICset', 'w')as fob:
+        fob.write(s)
         fob.close()
 else:
     firstrun=0
