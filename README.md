@@ -1,2 +1,2 @@
 # Intelligence_Closet
-The CORE part of an Intelligence Closet.
+智能衣柜软件部分_客户端
