@@ -1,5 +1,5 @@
-print('[DE][INFO]USE ANOTHER VERSION OF THIS')
-print('[DE][INFO]Type "help" for help file.')
+print('[DE]USE ANOTHER VERSION OF THIS')
+print('[DE]Can not run Engine in Python')
 import os
 def Crash():
     print('Stopping the App.')
@@ -19,20 +19,3 @@ def fuck():
 def website():
     print('Starting web browser.')
     os.system('open https://github.com/ccjjfdyqlhy')
-while True:
-    a=input('>>>')
-    if a == 'help':
-        print('[DE]Help File\ncrash - crash the App.\nrestart - restart the App.\nclearconfig - delate the config file.\nuploaderrors - upload the error log.\nwebsite - open the website of the creator of DE.\nfuck - weird.\nhelp - show this help file.\nquit - quit the prompt.')
-    elif a == 'quit':
-        quit()
-    elif a == 'crash':
-        b=input('[DE][WAIT][WARN]Are you SURE to crash python.exe? This will end this engine too!(Y/Other):')
-        if b == 'Y':            
-            Crash()
-        else:
-            print('[DE][INFO]Canceled.')
-    elif a == 'restart':
-        Restart()
-    else:    
-        print('[DE]No such command.')
-
